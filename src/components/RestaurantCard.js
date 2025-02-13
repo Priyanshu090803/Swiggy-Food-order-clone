@@ -10,12 +10,8 @@ const RestaurantCard = (props) => {
       deliveryTime,
     } = ResData?.info;
     return (
+      
       <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-        {/* <h3>{ResData.info.name}</h3>
-              <h4>{ResData.info.cuisines.join(", ")}</h4>
-              <h4>{ResData.info.avgRating}</h4>
-              <h4>{ResData.info.costForTwo}</h4>
-              <h4>{ResData.info.deliveryTime}</h4> */}
         <img
           className="res-logo"
           src={
