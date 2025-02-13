@@ -47,6 +47,7 @@ html{
     height: px;
     padding: 10px;
     margin: 2rem;
+    border-radius: 2rem;
 }
 .res-card:hover{
     border: 1px solid rgb(182, 172, 172);
@@ -60,4 +61,36 @@ html{
     width: 100%;
     height: 20rem;
     object-fit:cover;
+    border-radius: 2rem;
+}
+.Shimmer-container{
+    width: 80%;
+    height: full;
+    display: flex;
+    justify-content: space-between;
+    padding: 8rem;
+    flex-wrap: wrap;
+
+}
+.Shimmer{
+    width: 100%;
+    height: 100vh;
+    transition: all 0.3s ;
+    
+}
+.Shimmer-big{
+    margin: 5rem;
+    width: 90%;
+    height: 20rem;
+    background-color: rgba(204, 195, 181, 0.74);
+    font-size: 3rem;
+    border-radius: 2rem;
+}
+.Shimmer-card{
+    width: 20rem;
+    height: 25rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgba(204, 195, 181, 0.74);
+    border-radius: .5rem;
 }
