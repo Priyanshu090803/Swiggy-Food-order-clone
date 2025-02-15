@@ -4,11 +4,6 @@ export const Header = () => {
 
 
   let [btnName,SetbtnName] = useState("login");
-  let count;
-  useEffect(() => {
-    
-  }, [btnName])
-  
     return (
       <div className="Header">
         <div className="logo-container">
@@ -25,7 +20,7 @@ export const Header = () => {
             <li>Contact Us</li>
             <li>Cart</li>
             <button className="login" onClick={()=>{
-              SetbtnName("logOut"),console.log(btnName)
+              btnName==="login"? SetbtnName("logOut") : SetbtnName("login");
             }}>{btnName}</button>
           </ul>
         </div>
