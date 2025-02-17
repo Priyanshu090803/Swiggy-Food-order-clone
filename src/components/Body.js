@@ -4,12 +4,15 @@ import Shimmer from "./Shimmer";
 const Body = () => {
     const [listOfRes,setListOfRes]=useState([]);        // IMP NOTE: USE listOfRes(usestate variable) at the mapping also . Ab har jagah is component k andr Reslist ke jagah listOfRes  likh sakte hai 
     const [searchText,setSearchText]=useState("");
-   
+    const [filteredRes,setFilteredRes]=useState([]);
+
     const fetchData= async()=>{
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.87960&lng=78.07620&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
     console.log(json)
     setListOfRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setFilteredRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+
    }
    
    useEffect(()=>{
@@ -25,10 +28,14 @@ const Body = () => {
       ></input>
 
       <button className="search-button"
+
       onClick={()=>{
-        console.log(searchText)
+        console.log(searchText);
+        const filteredRestaurant= listOfRes.filter((res)=>res?.info.name.toLowerCase().includes(searchText.toLowerCase()))
+        setFilteredRes(filteredRestaurant);
       }}
-      >Seach</button>
+      
+      >Search</button>
       </div>
 
         <div className="filter">
@@ -49,7 +56,7 @@ const Body = () => {
         
 
           { 
-          listOfRes?.map((value) => (
+            filteredRes?.map((value) => (
               <RestaurantCard key={value.id} ResData={value} />    // YHA PE (VALUE) RESLIST K ANDR K ELEMENTS KO TARGET KREGA ::
             )) 
           }
