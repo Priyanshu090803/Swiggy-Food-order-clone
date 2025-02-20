@@ -4,6 +4,11 @@ export const Header = () => {
 
 
   let [btnName,SetbtnName] = useState("login");
+
+  useEffect(()=>{
+    console.log('body rendered')
+  },[btnName]);
+
     return (
       <div className="Header">
         <div className="logo-container">

@@ -57,7 +57,7 @@ const Body = () => {
 
           { 
             filteredRes?.map((value) => (
-              <RestaurantCard key={value.id} ResData={value} />    // YHA PE (VALUE) RESLIST K ANDR K ELEMENTS KO TARGET KREGA ::
+              <RestaurantCard key={value.info.id} ResData={value} />    // YHA PE (VALUE) RESLIST K ANDR K ELEMENTS KO TARGET KREGA ::
             )) 
           }
 
