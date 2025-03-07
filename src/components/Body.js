@@ -1,6 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+
 const Body = () => {
     const [listOfRes,setListOfRes]=useState([]);        // IMP NOTE: USE listOfRes(usestate variable) at the mapping also . Ab har jagah is component k andr Reslist ke jagah listOfRes  likh sakte hai 
     const [searchText,setSearchText]=useState("");
@@ -57,7 +59,7 @@ const Body = () => {
 
           { 
             filteredRes?.map((value) => (
-              <RestaurantCard key={value.info.id} ResData={value} />    // YHA PE (VALUE) RESLIST K ANDR K ELEMENTS KO TARGET KREGA ::
+             <Link key={value.info.id} to={"restaurants/"+value.info.id}><RestaurantCard  ResData={value} /></Link>     // YHA PE (VALUE) RESLIST K ANDR K ELEMENTS KO TARGET KREGA ::
             )) 
           }
 
