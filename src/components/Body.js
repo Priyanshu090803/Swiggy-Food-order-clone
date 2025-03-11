@@ -45,11 +45,11 @@ const Body = () => {
 
           <button className="filter-btn" onClick={()=>{
 
-             let valueOfList=listOfRes.filter(
+             let valueOfList=filteredRes.filter(
               (i)=>i.info.avgRating>4.2,
               console.log(listOfRes)
               )
-            setListOfRes(valueOfList)}}>
+              setFilteredRes(valueOfList)}}>
             Top Rated Restaurants
           </button>
 </div>
