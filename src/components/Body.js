@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = () => {
     const [listOfRes,setListOfRes]=useState([]);        // IMP NOTE: USE listOfRes(usestate variable) at the mapping also . Ab har jagah is component k andr Reslist ke jagah listOfRes  likh sakte hai 
@@ -20,6 +21,15 @@ const Body = () => {
    useEffect(()=>{
     fetchData()
    },[])
+   
+   const checkStatus= useOnlineStatus();
+   if(checkStatus===false){
+    return(
+      <h1>You are offline</h1>
+    )
+   }
+
+
     return listOfRes.length===0 ? ( <Shimmer/>): (                                       //just a ternary operator is used here for the conditinal rendering
       <div className="body">
       <div className="upper">

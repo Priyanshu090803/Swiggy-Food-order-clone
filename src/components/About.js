@@ -22,22 +22,23 @@ import UserClass from "./UserClass";
 class About extends React.Component{
     constructor(props){
         super(props);
-    console.log("parent constructor");
+    // console.log("parent constructor");
     
     }
     componentDidMount(){
-        console.log("parent mount");
+        // console.log("parent mount");
         
     }
     render(){
-        console.log("child");
+        // console.log("child");
         
         return(
             <div className="About">            
-         <UserClass name={"priyanshu chandra tamta"} location={"Location: Pithoragarh"}/>
-         <User name={"priyanshu tamta"} location={"Location: Pithoragarh"}/>
+         <UserClass />
+         {/* <User name={"priyanshu tamta"} location={"Location: Pithoragarh"}/> */}
        </div>
         )
+    
     }
 }
 export default About;
