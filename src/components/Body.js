@@ -22,7 +22,7 @@ const Body = () => {
     fetchData()
    },[])
    
-   const checkStatus= useOnlineStatus();
+   const checkStatus= useOnlineStatus() ;
    if(checkStatus===false){
     return(
       <h1>You are offline</h1>
