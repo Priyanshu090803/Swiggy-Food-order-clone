@@ -18,10 +18,7 @@
 import React from "react"
 import User from "./User";
 import UserClass from "./UserClass";
-<<<<<<< HEAD
 import UserContext from "../../utils/UserContext";
-=======
->>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
 
 class About extends React.Component{
     constructor(props){
@@ -39,7 +36,6 @@ class About extends React.Component{
         return(
             <div className="About">            
          <UserClass />
-<<<<<<< HEAD
 
          <UserContext.Consumer>                      
             {/* this is conmponent */}
@@ -47,9 +43,6 @@ class About extends React.Component{
          </UserContext.Consumer>
 
          <User name={"priyanshu tamta"} location={"Location: Pithoragarh"}/>
-=======
-         {/* <User name={"priyanshu tamta"} location={"Location: Pithoragarh"}/> */}
->>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
        </div>
         )
     

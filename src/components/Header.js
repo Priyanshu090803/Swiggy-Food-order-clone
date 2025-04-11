@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 import { useContext, useEffect, useState } from "react";
 import { LOGO_URL } from "../../utils/contants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import UserContext from "../../utils/UserContext";
 
-=======
-import { useEffect, useState } from "react";
-import { LOGO_URL } from "../../utils/contants";
-import { Link } from "react-router-dom";
-import useOnlineStatus from "../../utils/useOnlineStatus";
->>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
 
 export const Header = () => {
 
@@ -21,13 +14,9 @@ export const Header = () => {
     console.log('body rendered')
   },[btnName]);
 
-<<<<<<< HEAD
   const {loggedInUser}=useContext(UserContext)
 
   return (
-=======
-    return (
->>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
       <div className=" bg-rose-50 shadow-lg rounded-2xl h-16 flex justify-between  align-middle ">
         <div className=" size-14 ml-2">
           <img
@@ -48,10 +37,7 @@ export const Header = () => {
               btnName==="login"? SetbtnName("logOut") : SetbtnName("login");
             }}>{btnName}</button>
           </ul>
-<<<<<<< HEAD
           <h3>{loggedInUser}</h3>
-=======
->>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
         </div>
 
       </div>
