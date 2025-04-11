@@ -1,6 +1,11 @@
 import { CDN_URL } from "../../utils/contants";
+<<<<<<< HEAD
 const RestaurantCard = ({ResData}) => {
     // const { ResData } = props;
+=======
+const RestaurantCard = (props) => {
+    const { ResData } = props;
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
     const {
       // cloudinaryImageId,
       name,

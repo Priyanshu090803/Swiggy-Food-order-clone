@@ -1,9 +1,16 @@
 import RestaurantCard ,{withPromotedLabel} from "./RestaurantCard";
+<<<<<<< HEAD
 import { useEffect, useState,useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import UserContext from "../../utils/UserContext";
+=======
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
 
 const Body = () => {
     const [listOfRes,setListOfRes]=useState([]);        // IMP NOTE: USE listOfRes(usestate variable) at the mapping also . Ab har jagah is component k andr Reslist ke jagah listOfRes  likh sakte hai 
@@ -30,8 +37,11 @@ const Body = () => {
       <h1>You are offline</h1>
     )
    }
+<<<<<<< HEAD
   
    const {setUsername,loggedInUser}=useContext(UserContext)
+=======
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
 
 
     return listOfRes.length===0 ? ( <Shimmer/>): (                                       //just a ternary operator is used here for the conditinal rendering
@@ -46,7 +56,11 @@ const Body = () => {
       <button className="search-button  w-1/7 h-5/6 rounded-lg bg-gray-300"
 
       onClick={()=>{
+<<<<<<< HEAD
         console.log(searchText);      
+=======
+        console.log(searchText);
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
         const filteredRestaurant= listOfRes.filter((res)=>res?.info.name.toLowerCase().includes(searchText.toLowerCase()))
         setFilteredRes(filteredRestaurant);
       }}
@@ -54,6 +68,7 @@ const Body = () => {
       >Search</button>
       </div>
 
+<<<<<<< HEAD
       <div className=" cursor-pointer">
       <label className=" ">UserName:
       <input className=" ml-1 border rounded-xl mt-3 p-2 outline-pink-200 bg-white" 
@@ -65,6 +80,11 @@ const Body = () => {
 
         <div className="filter rounded-lg flex justify-between items-center mr-8 w-28 text-sm bg-gray-300 font-medium">
 
+=======
+        <div className="filter rounded-lg flex justify-between items-center mr-8 w-28 text-sm bg-gray-300 font-medium">
+
+
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
           <button className=" h-full w-full" onClick={()=>{
 
              let valueOfList=filteredRes.filter(
@@ -76,7 +96,10 @@ const Body = () => {
           </button>
 </div>
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
         <div className="res-container mt-10 flex flex-wrap gap-10 px-8">
         
           {  

@@ -6,7 +6,11 @@ import RestaurantCategory from "./RestaurantCategory";
 
 
 const RestaurantMenu=()=>{
+<<<<<<< HEAD
   const [showIndex,SetShowIndex]=useState(null);
+=======
+
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
   const {resId}=useParams();
   const resMenu = useRestaurantMenu(resId);
   if( resMenu===null){
@@ -18,6 +22,7 @@ const RestaurantMenu=()=>{
 )||[];
     return(
       
+<<<<<<< HEAD
     <div className=" bg-red-50">
     <h1 className="font-extrabold text-3xl  mx-80 mt-10"> {name}</h1>  
     <h3 className=" font-black text-xl   mx-80  my-2">{cuisines.join(", ")}  {costForTwoMessage}</h3>
@@ -37,6 +42,16 @@ const RestaurantMenu=()=>{
 
            />
         ) 
+=======
+    <div className=" ">
+    <h1 className="font-extrabold text-3xl  mx-80 mt-10"> {name}</h1>  
+    <h3 className=" font-black text-xl   mx-80  my-2">{cuisines.join(", ")}  {costForTwoMessage}</h3>
+    {
+      categories.map((category)=>{
+        return(
+          <RestaurantCategory data={category.card.card} />
+        )
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
       })
     }
 

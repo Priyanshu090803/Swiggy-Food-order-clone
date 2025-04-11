@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useRef, useState } from 'react'
 
 import { useGSAP } from '@gsap/react'
@@ -23,6 +24,14 @@ const ContactUs = () => {
       >Click Me</button>
       <div ref={circleRef} className='circle h-30  w-30 bg-gradient-to-bl from-indigo-400 to-red-300 rounded-full'></div>
 
+=======
+import React from 'react'
+
+const ContactUs = () => {
+  return (
+    <div>
+    <h1>ContactUs</h1>
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
     </div>
   )
 }

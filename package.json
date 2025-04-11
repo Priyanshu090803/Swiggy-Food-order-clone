@@ -14,6 +14,7 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@gsap/react": "^2.1.2",
     "@reduxjs/toolkit": "^2.6.1",
     "@tailwindcss/postcss": "^4.0.15",
@@ -21,6 +22,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.2.0",
+=======
+    "@tailwindcss/postcss": "^4.0.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+>>>>>>> 0e7021bcfe31c221556aeade70d6e296a049c5cc
     "react-router-dom": "^6.29.0",
     "tailwindcss": "^4.0.15"
   }
