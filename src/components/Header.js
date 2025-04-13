@@ -3,12 +3,12 @@ import { LOGO_URL } from "../../utils/contants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import UserContext from "../../utils/UserContext";
-
+import {useSelector} from 'react-redux'
 
 export const Header = () => {
-
-
-  let [btnName,SetbtnName] = useState("login");
+  const cartItems= useSelector((store)=>store.cart.items);
+  let [btnName,SetbtnName] = 
+  -("login");
   let checkStatus= useOnlineStatus()
   useEffect(()=>{
     console.log('body rendered')
@@ -32,7 +32,7 @@ export const Header = () => {
             <li className=" hover:text-red-400"><Link to={'/about'}>About Us</Link></li>
             <li className=" hover:text-red-400"><Link to={'/contact'}>Contact Us</Link></li>
             <li className=" hover:text-red-400"><Link to={'/grocery'}>Groceries</Link></li>
-            <li className=" hover:text-red-400"><Link to={'/cart'}>Cart</Link></li>
+            <li className=" hover:text-red-400 font-semibold text-xl"><Link to={'/cart'}>Cart-(items {cartItems.length})</Link></li>
             <button className="login bg-gray-300 hover:bg-gray-400 hover:text-amber-50 h-10 w-16 rounded-lg" onClick={()=>{
               btnName==="login"? SetbtnName("logOut") : SetbtnName("login");
             }}>{btnName}</button>

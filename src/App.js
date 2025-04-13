@@ -19,11 +19,11 @@ const About = lazy(()=>import("./components/About"))
 const App = () => {
     const [userName,setUsername]= useState()
   useEffect(()=>{
-    data={
+    const data={
       name:"Priyanshu"
     }
     setUsername(data.name)
-  },[])
+  },[]) 
   return(
     <Provider store={appStore}>
   <UserContext.Provider value={{loggedInUser:userName, setUsername}}>
@@ -33,7 +33,7 @@ const App = () => {
   </div>
   </UserContext.Provider>
   </Provider>
-  ) 
+) 
 };
 const appRouter=createBrowserRouter([
   {
