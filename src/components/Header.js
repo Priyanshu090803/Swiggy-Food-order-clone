@@ -7,12 +7,11 @@ import {useSelector} from 'react-redux'
 
 export const Header = () => {
   const cartItems= useSelector((store)=>store.cart.items);
-  let [btnName,SetbtnName] = 
-  -("login");
+  const [btnName,SetbtnName] = useState("login");
   let checkStatus= useOnlineStatus()
-  useEffect(()=>{
-    console.log('body rendered')
-  },[btnName]);
+  // useEffect(()=>{
+  //   console.log('body rendered')
+  // },[btnName]);
 
   const {loggedInUser}=useContext(UserContext)
 
@@ -33,9 +32,11 @@ export const Header = () => {
             <li className=" hover:text-red-400"><Link to={'/contact'}>Contact Us</Link></li>
             <li className=" hover:text-red-400"><Link to={'/grocery'}>Groceries</Link></li>
             <li className=" hover:text-red-400 font-semibold text-xl"><Link to={'/cart'}>Cart-(items {cartItems.length})</Link></li>
+            
             <button className="login bg-gray-300 hover:bg-gray-400 hover:text-amber-50 h-10 w-16 rounded-lg" onClick={()=>{
               btnName==="login"? SetbtnName("logOut") : SetbtnName("login");
             }}>{btnName}</button>
+
           </ul>
           <h3>{loggedInUser}</h3>
         </div>

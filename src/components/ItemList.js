@@ -1,6 +1,13 @@
 import { CDN_URL } from "../../utils/contants"
+import {addItem} from "../../utils/cartSlice"
+import { useDispatch } from "react-redux"
+
+
 const ItemList =({items})=>{
-    console.log(items)
+    const dispatch = useDispatch();
+    const handleAdd=(item)=>{
+        dispatch(addItem(item))
+    }
     return(
         <div>
             {
@@ -21,7 +28,9 @@ const ItemList =({items})=>{
                     </div>
                     <img src={CDN_URL+item.card.info.imageId} className=" w-18 h-14 right-4 absolute top-0 bg-center bg-cover rounded-lg"/>
 
-                 <button className=" w-12 h-6 top-0 hover:text-red-300 rounded-lg text-sm cursor-pointer active:text-amber-200 right-7 absolute bg-gray-800 text-white">+Add</button>
+                 <button
+                  className=" w-12 h-6 top-0 hover:text-red-300 rounded-lg text-sm cursor-pointer active:text-amber-200 right-7 absolute bg-gray-800 text-white"
+                  onClick={()=>handleAdd(item)}>+Add</button>
                     </div>
 
                 ))
@@ -30,21 +39,3 @@ const ItemList =({items})=>{
     )
 }
 export default ItemList
-
-// const ItemList = ({ items }) => {
-//     console.log(items); // First check what the actual structure is
-    
-//     return (
-//         <div>
-//             {items?.map((item) => (
-//                 <div key={item?.card?.info?.id || Math.random()}>
-//                     <div>
-//                         <span>{item?.card?.info?.name}</span>
-//                     </div>
-//                 </div>
-//             ))}
-//         </div>
-//     );
-// };
-
-// export default ItemList;

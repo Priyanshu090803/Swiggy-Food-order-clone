@@ -14,7 +14,7 @@ export default appStore;
 
 
 
-
+// our app have one big reducer for all different  reducers
 
 
 
