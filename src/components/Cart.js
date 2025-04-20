@@ -12,7 +12,7 @@ const Cart = ()=>{
     // const cartItems= store.cart.items
     
     const dispatch = useDispatch();
-    handleClear=()=>{
+    const handleClear=()=>{
         dispatch(clearItem())
     }
     return(
