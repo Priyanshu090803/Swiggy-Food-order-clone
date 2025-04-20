@@ -11,7 +11,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // import Groceries from "./components/Groceries";
 import UserContext from "../utils/UserContext";
 import {Provider} from 'react-redux'
-import appStore from "../utils/AppStore";
+import appStore from "../utils/appStore";
 
 const Groceries = lazy(()=>import('./components/Groceries'))
 const About = lazy(()=>import("./components/About"))
