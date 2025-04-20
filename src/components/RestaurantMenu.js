@@ -18,9 +18,12 @@ const RestaurantMenu=()=>{
 )||[];
     return(
       
-    <div className=" bg-red-50">
-    <h1 className="font-extrabold text-3xl  mx-80 mt-10"> {name}</h1>  
-    <h3 className=" font-black text-xl   mx-80  my-2">{cuisines.join(", ")}  {costForTwoMessage}</h3>
+    <div className=" bg-red-50  w-full">
+      <div className="  w-full flex flex-col items-center mt-8 ">    
+      <h1 className="font-extrabold text-3xl border bg-gradient-to-br from-yellow-100 to-orange-800  bg-clip-text text-transparent "> {name}</h1>  
+    <h3 className=" font-black text-xl bg-gradient-to-br from-green-700 to-green-300  bg-clip-text text-transparent  border">{cuisines.join(", ")}  {costForTwoMessage}</h3>
+    </div>
+
     {
       categories.map((category,index)=>{
         return(

@@ -1,30 +1,43 @@
-import React, { useRef, useState } from 'react'
-
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap';
+import React from 'react';
 
 const ContactUs = () => {
-  const [gola, setGola] = useState(0);
-  const circleRef=useRef();
-  useGSAP(()=>{
-    gsap.to(/*circleRef.current*/ ".circle",{
-    x:gola,
-    duration:0.4
-  })
-},[gola])
-  const random = gsap.utils.random(-500,500,100)
-
   return (
-    <div className=' h-96  flex justify-evenly  align-middle flex-col pl-80 border'>
-      <button className='  w-30 text-2xl bg-gradient-to-r from-blue-200 to-purple-200 h-12 rounded-xl active:scale-95'
-      onClick={()=>{
-        setGola(random)
-      }}
-      >Click Me</button>
-      <div ref={circleRef} className='circle h-30  w-30 bg-gradient-to-bl from-indigo-400 to-red-300 rounded-full'></div>
+    <section className=" w-full  py-24 px-5 flex justify-center bg-gradient-to-br  from-red-100 to-orange-50">
+      <div className=' flex flex-col  
+      items-center  p-20  bg-amber-50 shadow-xl shadow-rose-200 rounded-lg  w-full md:w-2/5'>
+        <h1 className=' text-3xl  uppercase  bg-gradient-to-tr from-gray-900 to-purple-300 bg-clip-text text-transparent  font-bold'>Contact Us!</h1>
+        <div className=' mt-8  bg-amber-50 shadow-xl shadow-purple-200 rounded-2xl p-10 gap-10 flex flex-col items-center'>
+          <div className=' flex gap-2 md:gap-6 items-center'>
+            <h3 className=' text-xl  text-slate-500'>Name:</h3>
+            <input
+            type='text'
+            placeholder='Enter your name...'
+            className=' p-2 bg-white outline-red-200 outline-1 rounded-lg'
+            />
+          </div>
+          <div className=' flex  gap-2 md:gap-6 items-center'>
+            <h3 className=' text-xl  text-slate-500'>Email:</h3>
+            <input
+            type='email'
+            placeholder='Enter your email...'
+            className=' p-2 bg-white outline-red-200 outline-1 rounded-lg'
+            />
+          </div>
+          <div className=' flex flex-col  gap-2 md:gap-6 items-center'>
+          <label htmlFor="message" className="text-xl text-slate-500"> Message</label>
+            <textarea 
+              id="message" 
+              placeholder=" Your message here..."
+              rows={6}
+              className=" p-4 bg-white w-full outline-red-200 outline-1 rounded-lg"
+            />
+          </div>
 
-    </div>
-  )
+         <button className='  bg-slate-900 text-white px-3 py-1 rounded-xl hover:bg-slate-800 hover:scale-110 active:text-red-200 transition-all  text-xl'>Submit</button>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default ContactUs
+export default ContactUs;

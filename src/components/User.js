@@ -4,12 +4,12 @@ const User=({name,location})=>{
     const [count , SetCount]=useState(0);
   
     return(
-        <div>
+        <div className=" hidden">
             <h1>{name}</h1>
             <button onClick={()=>{SetCount(count+1)}}>Increase</button>
             <h3>counter:{count}</h3>
             <h3>{location}</h3>
-            <h4>Contat : 454235432</h4> 
+            <h4>Contact : 454235432</h4> 
         </div>
     )
 }
