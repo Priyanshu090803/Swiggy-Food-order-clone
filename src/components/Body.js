@@ -12,12 +12,16 @@ const Body = () => {
     const RestaurantCardPromoted= withPromotedLabel(RestaurantCard)
 
     const fetchData= async()=>{
+    try{
+
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=27.87960&lng=78.07620&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
     console.log(json)
     setListOfRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [])
     setFilteredRes(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [])
-
+    }catch(err){
+      console.log('ERROR fetching data',err)
+    }
    }
    
    useEffect(()=>{
@@ -76,7 +80,7 @@ const Body = () => {
           </button>
 </div>
         </div>
-        <div className="res-container grid grid-cols-2 mt-10 my-2 gap-2 px-4  md:mt-10  md:flex md:flex-wrap md:gap-10 md:px-8">
+        <div className="res-container flex flex-wrap gap-4 px-4 mt-6 justify-center md:gap-10 md:px-8">
         
           {  
             filteredRes?.map((value) => (
